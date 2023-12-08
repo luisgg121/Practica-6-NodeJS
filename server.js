@@ -14,12 +14,14 @@ app.use(express.json());
 
 // Crear tarea
 app.post('/tasks', async (req, res) => {
-    const task = await Task.create(req.body); res.json(task);
+    const task = await Task.create(req.body); 
+    res.json(task);
 });
 
 // Leer tareas
 app.get('/tasks', async (req, res) => {
-    const tasks = await Task.findAll(); res.json(tasks);
+    const tasks = await Task.findAll(); 
+    res.json(tasks);
 });
 
 // Actualizar tarea
@@ -31,7 +33,7 @@ res.json({ message: `Changed ${affectedRows} row(s)` });
 // Eliminar tarea
 app.delete('/tasks/:id', async (req, res) => {
     const deletedRows = await Task.destroy({ where: { id: req.params.id } });
-    res.json({ message: `Deleted $(deletedRows} row(s)` });
+    res.json({ message: `Deleted ${deletedRows} row(s)` });
 });
 
 

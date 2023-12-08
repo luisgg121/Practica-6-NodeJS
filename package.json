@@ -4,7 +4,6 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "mocha --exit",
     "start": "node server.js",
     "start:production": "cross-env NODE_ENV=production node server.js",
     "start:test": "cross-env NODE_ENV=test node server.js"
